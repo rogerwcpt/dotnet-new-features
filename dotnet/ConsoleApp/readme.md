@@ -43,9 +43,9 @@ public record User(string UserName, string FullName);
 ##  Records vs Classes
 
 | Feature                   |Record|Class|Struct|
-|---------------------------|-------|-------|-------|
-| Automatic Value equality? | ✅ | ❎ |✅|
-| Immutable                 | ✅ | ❎ |✅|
+|---------------------------|-------|------|-------|
+| Automatic Value equality? | ✅ | ❌ |✅|
+| Immutable                 | ✅ | ❌ |✅|
 | Memory Allocation         | Heap | Heap | Stack (faster) |
 
 
@@ -54,8 +54,26 @@ public record User(string UserName, string FullName);
 
 |Feature|Record|Class|Struct|
 |-------|-------|-------|-------|
-|Members Exposed Automatically? | ✅ | ❎ |✅ |
-|Equality By Value? | ✅ | ❎ ||✅ |
+|Members Exposed Automatically? | ✅ |❌ |✅ |
+|Equality By Value? | ✅ | ❌ ||✅ |
+
+
+## CollectionExpressions
+
+
+##### Before
+```csharp
+int[] a = new int[] ｛1, 2, 3, 4, 5, 6,7,8｝；
+ // or
+var a = new int[] { 1, 2, 3, 4, 5, 6, 7, 8};
+```
+
+##### After
+```csharp
+int[] a = [1, 25 3, 4, 5, 6, 7, 8];
+// cant use var
+//var a2 = [1, 25 3, 4, 5, 6, 7, 8];
+```
 
 
 ## Type Aliases
@@ -70,7 +88,7 @@ public class Square
 }
 ```
 
-##### Before
+##### After
 
 ```csharp
 using Boundaries = (int X, int Y, int Width, int Height);

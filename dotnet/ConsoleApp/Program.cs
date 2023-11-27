@@ -1,7 +1,6 @@
 ﻿var ur1 = new UserRecord("John", "Smith");
 var ur2 = new UserRecord("John", "Smith");
 
-ur1.FullName = "Bob"
 
 Console.WriteLine($"are records equal {ur1 == ur2}");
 
@@ -49,3 +48,5 @@ public struct UserStruct(string UserName, string FullName)
         return !us1.Equals(us2);
     }
 }
+
+
